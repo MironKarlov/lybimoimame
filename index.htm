@@ -59,6 +59,12 @@
             color: #e91e63;
         }
 
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #e91e63;
+        }
+
         p {
             font-size: 1.3rem;
             max-width: 800px;
@@ -202,6 +208,31 @@
             color: #e91e63;
         }
 
+        .photo-section {
+            margin: 40px 0;
+        }
+
+        .photos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .photo-with-caption {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-caption {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
         footer {
             background: rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -213,10 +244,12 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
+            h3 { font-size: 1.7rem; }
             p { font-size: 1.1rem; }
             .photo-frame { width: 250px; height: 250px; }
             .gallery-item { width: 150px; height: 150px; }
             .nav-dots { right: 15px; }
+            .photos-container { gap: 20px; }
         }
     </style>
 </head>
@@ -228,6 +261,7 @@
         <a href="#section3" class="dot"></a>
         <a href="#section4" class="dot"></a>
         <a href="#section5" class="dot"></a>
+        <a href="#section6" class="dot"></a>
     </div>
 
     <!-- Секция 1: Заголовок -->
@@ -284,8 +318,34 @@
         </div>
     </section>
 
-    <!-- Секция 5: Галерея воспоминаний -->
+    <!-- Секция 5: Дополнительные фото -->
     <section id="section5">
+        <div class="container">
+            <h2>Наши особенные моменты</h2>
+            <p>Самые дорогие воспоминания с моей мамочкой</p>
+            
+            <div class="photos-container">
+                <div class="photo-with-caption">
+                    <div class="photo-frame">
+                        <img src="IMG_8933.png" alt="Моя красивая мама" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">Моя самая красивая мама в мире! 💖</div>
+                </div>
+                
+                <div class="photo-with-caption">
+                    <div class="photo-frame">
+                        <img src="IMG_7535.png" alt="Любимая мамочка" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="photo-caption">Моя любимая мамочка 🌸</div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">⌄</div>
+        </div>
+    </section>
+
+    <!-- Секция 6: Галерея воспоминаний -->
+    <section id="section6">
         <div class="container">
             <h2>Наши воспоминания</h2>
             <p>Дорогие моменты, которые я всегда буду хранить в сердце</p>
@@ -350,6 +410,18 @@
             });
             
             item.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Добавляем интерактивность для фото-рамок
+        document.querySelectorAll('.photo-frame').forEach(frame => {
+            frame.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            frame.addEventListener('mouseout', function() {
                 this.style.transform = 'scale(1)';
             });
         });
