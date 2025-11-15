@@ -87,8 +87,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 5rem;
-            color: #fff;
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .memory-box {
@@ -256,9 +261,9 @@
         <div class="container">
             <h2>Моя любимая мамочка</h2>
             <div class="photo-frame">
-                👩‍👧
+                <img src="IMG_8610.jpeg" alt="Моя любимая мама" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <p>Здесь могла бы быть ваша фотография с мамой</p>
+            <p>Моя самая красивая мама в мире! 💖</p>
             <div class="scroll-indicator">⌄</div>
         </div>
     </section>
