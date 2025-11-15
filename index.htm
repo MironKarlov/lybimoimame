@@ -130,6 +130,13 @@
             font-size: 3rem;
             color: #fff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .nav-dots {
@@ -350,7 +357,9 @@
             <h2>Наши воспоминания</h2>
             <p>Дорогие моменты, которые я всегда буду хранить в сердце</p>
             <div class="gallery">
-                <div class="gallery-item">🎂</div>
+                <div class="gallery-item">
+                    <img src="IMG_2374.jpeg" alt="День рождения с мамой" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="gallery-item">🏖️</div>
                 <div class="gallery-item">🎄</div>
                 <div class="gallery-item">🎓</div>
